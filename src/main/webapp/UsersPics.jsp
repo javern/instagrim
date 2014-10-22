@@ -10,6 +10,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <%LoggedIn lg = (LoggedIn) session.getAttribute("LoggedIn");%>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Instagrim</title>
         <link rel="stylesheet" type="text/css" href="/Instagrim/Styles.css" />
@@ -17,8 +18,7 @@
     <body>
         <header>
         
-        <h1>InstaGrim ! </h1>
-        <h2>Your world in Black and White</h2>
+        <h1>Your world brighter</h2>
         </header>
         
         <nav>
@@ -29,7 +29,7 @@
         </nav>
  
         <article>
-            <h1>Your Pics</h1>
+            <h1><% out.println(lg.getUsername());%>'s Pics</h1>
         <%
             java.util.LinkedList<Pic> lsPics = (java.util.LinkedList<Pic>) request.getAttribute("Pics");
             if (lsPics == null) {

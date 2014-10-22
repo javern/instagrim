@@ -4,9 +4,11 @@
     Author     : Administrator
 --%>
 
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="uk.ac.dundee.computing.aec.instagrim.stores.*" %>
+<%@page import="uk.ac.dundee.computing.aec.instagrim.servlets.*" %>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,7 +19,7 @@
     <body>
         <header>
             <h1>InstaGrim ! </h1>
-            <h2>Your world in Black and White</h2>
+            <h2>Your world brighter</h2>
         </header>
         <nav>
             <ul>
@@ -33,11 +35,17 @@
                     %>
 
                 <li><a href="/Instagrim/Images/<%=lg.getUsername()%>">Your Images</a></li>
-                    <%}
+                  <li><a href=<%session.invalidate();%>"/Instagrim/">Logout</a></li> 
+                  
+                  
+              <%--   <input type='submit' value ='logout'> --%> 
+                                           <%}
                             }else{
                                 %>
                  <li><a href="register.jsp">Register</a></li>
                 <li><a href="login.jsp">Login</a></li>
+              
+
                 <%
                                         
                             
