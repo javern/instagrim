@@ -7,6 +7,8 @@
 <%@page import="java.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="uk.ac.dundee.computing.aec.instagrim.stores.*" %>
+<%@ page import="uk.ac.dundee.computing.aec.instagrim.models.User" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,11 +27,16 @@
             <ul>
                 <li class="nav"><a href="/Instagrim/upload.jsp">Upload</a></li>
                 <li class="nav"><a href="/Instagrim/Images/majed">Sample Images</a></li>
+                 <li><a href="/Instagrim/logout.jsp">Logout</a></li> 
+                  
+
+
             </ul>
         </nav>
  
         <article>
-            <h1><% out.println(lg.getUsername());%>'s Pics</h1>
+            <h1><% out.println(lg.getUsername() + "'s");%> Pics</h1>
+           
         <%
             java.util.LinkedList<Pic> lsPics = (java.util.LinkedList<Pic>) request.getAttribute("Pics");
             if (lsPics == null) {
@@ -43,7 +50,9 @@
                 Pic p = (Pic) iterator.next();
 
         %>
-        <a href="/Instagrim/Image/<%=p.getSUUID()%>" ><img src="/Instagrim/Thumb/<%=p.getSUUID()%>"></a><br/><%
+        <a href="/Instagrim/Image/<%=p.getSUUID()%>" ><img src="/Instagrim/Thumb/<%=p.getSUUID()%>"></a>
+        <a><%out.println(p.getCaption());%></a>
+        <br/><%
 
             }
             }

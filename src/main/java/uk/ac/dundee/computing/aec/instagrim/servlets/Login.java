@@ -51,6 +51,7 @@ public class Login extends HttpServlet {
         String username=request.getParameter("username");
         String password=request.getParameter("password");
         
+        
         User us=new User();
         us.setCluster(cluster);
         boolean isValid=us.IsValidUser(username, password);
@@ -60,6 +61,9 @@ public class Login extends HttpServlet {
             LoggedIn lg= new LoggedIn();
             lg.setLogedin();
             lg.setUsername(username);
+            lg.setFirstName(us.getFirstName(username));
+            lg.setLastName(us.getLastName(username));
+            lg.setEmail(us.getEmail(username));
             //request.setAttribute("LoggedIn", lg);
             
             session.setAttribute("LoggedIn", lg);

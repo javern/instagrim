@@ -18,12 +18,13 @@ public class Pic {
     private int length;
     private String type;
     private java.util.UUID UUID=null;
-    
+    String caption = null;
     public void Pic() {
 
     }
     public void setUUID(java.util.UUID UUID){
         this.UUID =UUID;
+        
     }
     public String getSUUID(){
         return UUID.toString();
@@ -51,5 +52,13 @@ public class Pic {
         byte image[] = Bytes.getArray(bImage);
         return image;
     }
+    public void setCaption(String caption){
+         this.caption= caption;
+    }
+    public String getCaption() {
+         
+       return this.caption;
+    }
 
 }
+

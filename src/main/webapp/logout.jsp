@@ -14,25 +14,6 @@
 
     </head>
     <body>
-        
-    <script>        
-        
-    function validatelogin(){  
-        
-    var username=document.login.username.value;  
-    var password=document.login.password.value; 
-    
-    if (username==null || username==""){  
-    alert("Please enter a username");  
-    return false;  
-    }  
-    else if (password==null || password==""){  
-    alert("Pleae enter a password");  
-    return false;  
-    }
-    }
-    </script>  
-        
         <header>
         <h1>InstaGrim ! </h1>
         <h2>Your world brighter</h2>
@@ -45,14 +26,13 @@
         </nav>
        
         <article>
-            <h3>Login</h3>
-            <form name ="login" method="POST"  action="Login" onsubmit="return validatelogin()">
+            <h3>Would you like to logout?</h3>
+            <form method="POST"  action="Log">
                 <ul>
-                    <li>User Name <input type="text" name="username"></li>
-                    <li>Password <input type="password" name="password"></li>
+                  
                 </ul>
                 <br/>
-                <input type="submit" value="Login"> 
+                <input type="submit" value="Logout"> 
             </form>
 
         </article>

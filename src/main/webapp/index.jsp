@@ -18,14 +18,13 @@
     </head>
     <body>
         <header>
-            <h1>InstaGrim ! </h1>
+            <h1>InstaGrim!</h1>
             <h2>Your world brighter</h2>
         </header>
         <nav>
             <ul>
-
-               
                 <li><a href="upload.jsp">Upload</a></li>
+                 
                     <%
                         
                         LoggedIn lg = (LoggedIn) session.getAttribute("LoggedIn");
@@ -34,16 +33,20 @@
                             if (lg.getlogedin()) {
                     %>
 
-                <li><a href="/Instagrim/Images/<%=lg.getUsername()%>">Your Images</a></li>
-                  <li><a href=<%session.invalidate();%>"/Instagrim/">Logout</a></li> 
+                <li><a href="/Instagrim/Images/<%=lg.getUsername()%>">My Pics</a></li>
+                <li><a href="profile.jsp">Profile</a></li>
+                <%--  <li><a href="/Instagrim/Logout">Logout</a></li>  
+                 <form method="POST"  action="Logout">                
+                <input type="submit" value="Logout"> --%>
+                </form>
+                
                   
-                  
-              <%--   <input type='submit' value ='logout'> --%> 
                                            <%}
                             }else{
                                 %>
                  <li><a href="register.jsp">Register</a></li>
                 <li><a href="login.jsp">Login</a></li>
+                
               
 
                 <%
@@ -60,3 +63,4 @@
         </footer>
     </body>
 </html>
+
