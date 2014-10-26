@@ -26,9 +26,10 @@
           Your surname is <% out.println(lg.getLastName());%><br>
            Your email is <% out.println(lg.getEmail());%><br>
            Your username is <% out.println(lg.getUsername());%>
-           <form name ="login" method="POST"  action="/Instagrim/Delete" onsubmit="return validatelogin()">
+           
+           <form name ="Delete" method="POST"  action="/Instagrim/Delete">
                 <ul>
-                    <li>User Name <input type="text" name="username" value="<%=lg.getUsername()%>" hidden></li>
+                  Would you like to delete your profile? <input type="text" name="username" value="<%=lg.getUsername()%>" hidden></li>
                 </ul>
                 <br/>
                 <input type="submit" value="Delete"> 
